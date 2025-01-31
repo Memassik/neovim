@@ -165,6 +165,10 @@ return {
     { '<leader>sq', '<cmd>FzfLua quickfix<cr>', desc = 'Quickfix List' },
     { '<leader>sw', '<cmd>FzfLua grep_cword<cr>', desc = 'Word' },
     { '<leader>sw', '<cmd>FzfLua grep_visual<cr>', mode = 'v', desc = 'Selection' },
+    { '<leader>tt', '<cmd>FzfLua tags<cr>', desc = 'Tags' },
+    { '<leader>tg', '<cmd>FzfLua tags_live_grep<cr>', desc = 'Grep Tags' },
+    { '<leader>tw', '<cmd>FzfLua tags_grep_cword<cr>', desc = 'Tag' },
+    { '<leader>tw', '<cmd>FzfLua tags_grep_visual<cr>', mode = 'v', desc = 'Selection Tags' },
     {
       '<leader>ss',
       function()

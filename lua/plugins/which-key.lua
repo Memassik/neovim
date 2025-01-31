@@ -18,6 +18,7 @@ return {
         { '<leader>gh', group = 'hunks' },
         { '<leader>q', group = 'quit/session' },
         { '<leader>s', group = 'search' },
+        { '<leader>t', group = 'tags', icon = { icon = ' ', color = 'red' } },
         { '<leader>u', group = 'ui', icon = { icon = '󰙵 ', color = 'cyan' } },
         { '<leader>x', group = 'diagnostics/quickfix', icon = { icon = '󱖫 ', color = 'green' } },
         { '[', group = 'prev' },
