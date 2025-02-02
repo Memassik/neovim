@@ -1,19 +1,13 @@
 return {
-  -- Main LSP Configuration
   'neovim/nvim-lspconfig',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for Neovim
-    -- Mason must be loaded before its dependents so we need to set it up here.
-    -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-    { 'williamboman/mason.nvim', opts = {} },
-    'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-    -- Useful status updates for LSP.
-    { 'j-hui/fidget.nvim', opts = {} },
-
-    -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
+    {
+      'j-hui/fidget.nvim',
+      opts = {},
+    },
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.
@@ -124,7 +118,31 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      -- clangd = {},
+      clangd = {
+        autostart = false,
+        offsetEncoding = { 'utf-8', 'utf-16' },
+        textDocument = {
+          completion = {
+            editsNearCursor = true,
+          },
+        },
+        {
+          'clangd',
+          '--background-index',
+          '--clang-tidy',
+          '--header-insertion=never',
+          '--completion-style=detailed',
+          '--function-arg-placeholders',
+          '--fallback-style=llvm',
+        },
+        { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
+        root_dir = function(fname)
+          return require('lspconfig.util').root_pattern('configure.ac', 'configure.in', 'config.h.in', 'meson.build', 'meson_options.txt', 'build.ninja')(fname)
+            or require('lspconfig.util').root_pattern('compile_commands.json', 'compile_flags.txt')(fname)
+            or require('lspconfig.util').find_git_ancestor(fname)
+            or vim.fn.getcwd()
+        end,
+      },
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
