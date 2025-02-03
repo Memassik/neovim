@@ -145,11 +145,13 @@ map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
 -- floating terminal
-map("n", "<leader>ft", function() Snacks.terminal() end, { desc = "Terminal" })
+map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", { desc = "Terminal" })
+map("n", "<leader>fT", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal Floating" })
 
 -- Terminal Mappings
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 
 -- windows
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
