@@ -19,6 +19,7 @@ return { -- Autocompletion
     },
     'saadparwaiz1/cmp_luasnip',
     'quangnguyen30192/cmp-nvim-tags',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
 
     -- Adds other completion capabilities.
     --  nvim-cmp does not ship with all sources by default. They are split
@@ -99,6 +100,7 @@ return { -- Autocompletion
           group_index = 0,
         },
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help' },
         {
           name = 'tags',
           option = {
