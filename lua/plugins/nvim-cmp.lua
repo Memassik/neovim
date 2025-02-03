@@ -18,7 +18,6 @@ return { -- Autocompletion
       },
     },
     'saadparwaiz1/cmp_luasnip',
-    'quangnguyen30192/cmp-nvim-tags',
     'hrsh7th/cmp-nvim-lsp-signature-help',
 
     -- Adds other completion capabilities.
@@ -101,26 +100,8 @@ return { -- Autocompletion
         },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
-        {
-          name = 'tags',
-          option = {
-            -- this is the default options, change them if you want.
-            -- Delayed time after user input, in milliseconds.
-            complete_defer = 100,
-            -- Max items when searching `taglist`.
-            max_items = 15,
-            -- The number of characters that need to be typed to trigger
-            -- auto-completion.
-            keyword_length = 2,
-            -- Use exact word match when searching `taglist`, for better searching
-            -- performance.
-            exact_match = false,
-            -- Prioritize searching result for current buffer.
-            current_buffer_only = false,
-          },
-        },
         { name = 'luasnip' },
-        { name = 'buffer', max_item_count = 15 },
+        { name = 'buffer' },
         { name = 'path' },
       },
     }
