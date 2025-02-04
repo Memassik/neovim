@@ -45,7 +45,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 200
 
 -- Decrease mapped sequence wait time
 vim.opt.timeoutlen = 300
@@ -68,4 +68,5 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
 vim.bo.omnifunc = "ccomplete@Complete"
