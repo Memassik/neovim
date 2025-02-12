@@ -133,7 +133,7 @@ return {
       '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>',
       desc = 'Switch Buffer',
     },
-    { '<leader>/', '<cmd>FzfLua command_history<cr> lgrep_curbuf', desc = 'Grep' },
+    { '<leader>/', '<cmd>FzfLua lgrep_curbuf<cr>', desc = 'Grep' },
     { '<leader>:', '<cmd>FzfLua command_history<cr>', desc = 'Command History' },
     { '<leader><space>', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
     -- find
