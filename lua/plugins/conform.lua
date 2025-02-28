@@ -43,6 +43,7 @@ return { -- Autoformat
       lua = { 'stylua' },
       c = { 'clang-format' },
       cpp = { 'clang-format' },
+      rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
