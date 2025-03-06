@@ -1,7 +1,12 @@
 return {
-  'akinsho/bufferline.nvim',
-  lazy = false,
-  version = '*',
-  dependencies = 'nvim-tree/nvim-web-devicons',
-  opts = {},
+       "akinsho/bufferline.nvim",
+       event = "BufReadPre",
+       opts = {
+            options = {
+            themable = true,
+            offsets = {
+                { filetype = "NvimTree", highlight = "NvimTreeNormal" },
+            },
+        },
+    },
 }

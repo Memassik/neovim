@@ -1,5 +1,12 @@
 -- [[ Basic Keymaps ]]
 local map = vim.keymap.set
+
+map("i", "jk", "<ESC>")
+
+--NvimTree
+map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>")
+map("n", "<leader>E", "<cmd> NvimTreeFocus <CR>")
+
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- better up/down
 map({ 'n', 'x' }, 'j', "v:count == 0 ? 'gj' : 'j'", { desc = 'Down', expr = true, silent = true })
@@ -178,3 +185,4 @@ if vim.fn.has("nvim-0.11") == 0 then
     return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
   end, { expr = true, desc = "Jump Previous" })
 end
+local map = vim.keymap.set
