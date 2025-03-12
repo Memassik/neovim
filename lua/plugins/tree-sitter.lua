@@ -6,6 +6,7 @@ return {
     ensure_installed = {
       "bash",
       "c",
+      "cpp",
       "diff",
       "lua",
       "luadoc",
@@ -17,9 +18,6 @@ return {
     },
     highlight = {
       enable = true,
-      disable = function(bufnr)
-        return vim.api.nvim_buf_line_count(bufnr) > 50000
-      end,
       use_languagetree = true,
     },
     indent = { enable = true },

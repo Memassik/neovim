@@ -7,7 +7,7 @@ return {
       vim.o.background = "dark" -- or "light" for light mode
       -- Default options:
       require("gruvbox").setup {
-        terminal_colors = false, -- add neovim terminal colors
+        terminal_colors = true, -- add neovim terminal colors
         undercurl = true,
         underline = true,
         bold = true,
@@ -28,7 +28,7 @@ return {
         palette_overrides = {},
         overrides = {},
         dim_inactive = false,
-        transparent_mode = true,
+        transparent_mode = false,
       }
       vim.cmd "colorscheme gruvbox"
     end,
