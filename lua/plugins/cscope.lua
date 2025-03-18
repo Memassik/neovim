@@ -1,5 +1,6 @@
 return {
   "dhananjaylatkar/cscope_maps.nvim",
+  lazy = false,
   dependencies = {
     "ibhagwan/fzf-lua", -- optional [for picker="fzf-lua"]
   },
