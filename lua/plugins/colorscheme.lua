@@ -1,5 +1,4 @@
 return {
-  { lazy = true, "nvim-lua/plenary.nvim" },
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,

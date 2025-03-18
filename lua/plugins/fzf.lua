@@ -1,5 +1,6 @@
 return {
   "ibhagwan/fzf-lua",
+  dependencies = {"nvim-treesitter/nvim-treesitter"},
   cmd = "FzfLua",
   opts = function(_, opts)
     local fzf = require "fzf-lua"

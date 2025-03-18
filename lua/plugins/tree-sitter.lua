@@ -1,10 +1,11 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPost", "BufNewFile" },
+  cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   build = ":TSUpdate",
   main = "nvim-treesitter.configs", -- Sets main module to use for opts
   opts = {
     ensure_installed = {
-      "bash",
       "c",
       "cpp",
       "diff",

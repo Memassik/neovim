@@ -1,78 +1,71 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local opt = vim.opt
+local o = vim.o
+local g = vim.g
+-------------------------------------- options ------------------------------------------
+o.laststatus = 3
+o.showmode = false
 
--- Return of the BLOCK!
-vim.opt.guicursor = ""
+opt.guicursor = ""
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+g.have_nerd_font = true
 
--- Make line numbers default
-vim.opt.number = true
-vim.opt.relativenumber = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
-
--- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
-
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
-
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+  opt.clipboard = "unnamedplus"
 end)
 
--- Enable break indent
-vim.opt.breakindent = true
+o.cursorline = true
+o.cursorlineopt = "number"
 
--- Save undo history
-vim.opt.undofile = true
+opt.inccommand = "split"
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
--- Keep signcolumn on by default
-vim.opt.signcolumn = "yes"
+opt.scrolloff = 10
 
--- Decrease update time
-vim.opt.updatetime = 200
+-- Indenting
+o.shiftwidth = 4
+o.smartindent = true
+o.tabstop = 4
+o.softtabstop = 4
+o.ignorecase = true
+o.smartcase = true
+o.mouse = "a"
+opt.breakindent = true
+-- Numbers
+o.number = true
+o.relativenumber = true
+o.numberwidth = 2
+o.ruler = false
+-- disable nvim intro
+opt.shortmess:append "sI"
+o.signcolumn = "yes"
+o.splitbelow = true
+o.splitright = true
+o.timeoutlen = 400
+o.undofile = true
 
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+o.updatetime = 250
 
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.whichwrap:append "<>[]hl"
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+g.loaded_node_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
 
 vim.bo.omnifunc = "ccomplete@Complete"
+
+-- add binaries installed by mason.nvim to path
+local is_windows = vim.fn.has "win32" ~= 0
+local sep = is_windows and "\\" or "/"
+local delim = is_windows and ";" or ":"
+vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
+
+
+
