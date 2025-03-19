@@ -2,6 +2,10 @@
 local map = vim.keymap.set
 
 map("i", "jk", "<ESC>")
+map("i", "<C-h>", "<Left>", { desc = "move left" })
+map("i", "<C-l>", "<Right>", { desc = "move right" })
+map("i", "<C-j>", "<Down>", { desc = "move down" })
+map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 --NvimTree
 map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>")
