@@ -13,10 +13,10 @@ o.cursorline = true
 o.cursorlineopt = "number"
 -- Indenting
 o.expandtab = true
-o.shiftwidth = 2
+o.shiftwidth = 4
 o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
+o.tabstop = 4
+o.softtabstop = 4
 o.ignorecase = true
 o.smartcase = true
 o.mouse = "a"
@@ -61,6 +61,7 @@ opt.inccommand = "nosplit" -- preview incremental substitute
 opt.jumpoptions = "view"
 opt.linebreak = true -- Wrap lines at convenient points
 opt.list = true -- Show some invisible characters (tabs...
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.relativenumber = true -- Relative line numbers
