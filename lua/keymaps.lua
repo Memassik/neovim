@@ -179,6 +179,7 @@ map("n", "<leader>uI", function() vim.treesitter.inspect_tree() vim.api.nvim_inp
 -- floating terminal
 map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", { desc = "Terminal (cwd)" })
 map("n", "<leader>fT", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal floating" })
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 
 -- Terminal Mappings
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
