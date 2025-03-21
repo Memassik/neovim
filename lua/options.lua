@@ -65,7 +65,7 @@ opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.relativenumber = true -- Relative line numbers
-opt.scrolloff = 4 -- Lines of context
+opt.scrolloff = 10 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
