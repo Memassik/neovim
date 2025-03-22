@@ -44,20 +44,20 @@ map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bd", function()
-	Snacks.bufdelete()
+	require("configs.bufdelete")()
 end, { desc = "Delete Buffer" })
 map("n", "<leader>bo", function()
-	Snacks.bufdelete.other()
+	require("configs.bufdelete").other()
 end, { desc = "Delete Other Buffers" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
 map(
-	"n",
-	"<leader>ur",
-	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-	{ desc = "Redraw / Clear hlsearch / Diff Update" }
+    "n",
+    "<leader>ur",
+    "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+    { desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
@@ -95,18 +95,18 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 -- location list
 map("n", "<leader>xl", function()
-	local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
+    local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+    if not success and err then
+        vim.notify(err, vim.log.levels.ERROR)
+    end
 end, { desc = "Location List" })
 
 -- quickfix list
 map("n", "<leader>xq", function()
-	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
+    local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+    if not success and err then
+        vim.notify(err, vim.log.levels.ERROR)
+    end
 end, { desc = "Quickfix List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
@@ -114,16 +114,16 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
 -- formatting
 map({ "n", "v" }, "<leader>cf", function()
-	require("conform").format({ lsp_fallback = true })
+    require("conform").format({ lsp_fallback = true })
 end, { desc = "Format" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go({ severity = severity })
+    end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
@@ -133,48 +133,26 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
--- stylua: ignore start
-
 -- toggle options
-Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
-Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
-Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
-Snacks.toggle.diagnostics():map("<leader>ud")
-Snacks.toggle.line_number():map("<leader>ul")
-Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2, name = "Conceal Level" }):map("<leader>uc")
-Snacks.toggle.option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" }):map("<leader>uA")
-Snacks.toggle.treesitter():map("<leader>uT")
-Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background" }):map("<leader>ub")
-Snacks.toggle.dim():map("<leader>uD")
-Snacks.toggle.animate():map("<leader>ua")
-Snacks.toggle.indent():map("<leader>ug")
-Snacks.toggle.scroll():map("<leader>uS")
-Snacks.toggle.profiler():map("<leader>dpp")
-Snacks.toggle.profiler_highlights():map("<leader>dph")
+map("n", "<leader>uw", "<cmd>:set wrap!<cr>", { desc = "Wrap" })
+map("n", "<leader>ud", function() vim.lsp.diagnostic.disable() end, { desc = "Disable Diagnostics" })
+map("n", "<leader>uD", function() vim.lsp.diagnostic.enable() end, { desc = "Enable Diagnostics" })
+map("n", "<leader>uT", "<cmd>TSToggle indent<cr><cmd>TSToggle highlight<cr><cmd>TSToggle incremental_selection<cr>",
+    { desc = "Tree-sitter" })
 
-if vim.lsp.inlay_hint then
-  Snacks.toggle.inlay_hints():map("<leader>uh")
-end
-
--- lazygit
-if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
-  map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
-  map("n", "<leader>gl", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
-end
-
-map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
-map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
-map({"n", "x" }, "<leader>gY", function()
-  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
-end, { desc = "Git Browse (copy)" })
+--git
+map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Git Blame Line" })
+map("n", "<leader>gB", "<cmd>AsyncRun gitk<cr>", { desc = "Git Browse (open)" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
-map("n", "<leader>uI", function() vim.treesitter.inspect_tree() vim.api.nvim_input("I") end, { desc = "Inspect Tree" })
+map("n", "<leader>uI", function()
+    vim.treesitter.inspect_tree()
+    vim.api.nvim_input("I")
+end, { desc = "Inspect Tree" })
 
 -- floating terminal
 map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", { desc = "Terminal (cwd)" })
@@ -189,8 +167,6 @@ map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
-Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
-Snacks.toggle.zen():map("<leader>uz")
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -203,10 +179,10 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- native snippets. only needed on < 0.11, as 0.11 creates these by default
 if vim.fn.has("nvim-0.11") == 0 then
-  map("s", "<Tab>", function()
-    return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
-  end, { expr = true, desc = "Jump Next" })
-  map({ "i", "s" }, "<S-Tab>", function()
-    return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
-  end, { expr = true, desc = "Jump Previous" })
+    map("s", "<Tab>", function()
+        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+    end, { expr = true, desc = "Jump Next" })
+    map({ "i", "s" }, "<S-Tab>", function()
+        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+    end, { expr = true, desc = "Jump Previous" })
 end
