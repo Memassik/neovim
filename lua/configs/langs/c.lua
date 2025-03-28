@@ -43,9 +43,9 @@ M.format = {
 }
 
 M.setup = function()
-	require("configs.lspconfig").defaults()
+	require("conform").formatters_by_ft = M.format
 
-	local dap = require("dap")
+	require("configs.lspconfig").defaults()
 	local lspconfig = require "lspconfig"
 	local lsp = require "configs.lspconfig"
 	local options = M.lang()
@@ -56,6 +56,7 @@ M.setup = function()
 
 	lspconfig.clangd.setup(options)
 
+	local dap = require("dap")
 	dap.adapters.gdb = {
 		type = "executable",
 		command = "gdb",

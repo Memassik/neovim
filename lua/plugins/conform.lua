@@ -40,9 +40,5 @@ return { -- Autoformat
         end, {
             desc = "Re-enable autoformat-on-save",
         }),
-        formatters_by_ft = {
-            require("configs.langs.c").format,
-			require("configs.langs.rust").format,
-        },
     },
 }
