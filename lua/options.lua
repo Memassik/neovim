@@ -10,7 +10,6 @@ o.laststatus = 3
 o.showmode = false
 o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 o.cursorline = true
-o.cursorlineopt = "number"
 -- Indenting
 -- o.expandtab = true
 o.shiftwidth = 4
