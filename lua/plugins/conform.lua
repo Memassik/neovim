@@ -42,7 +42,7 @@ return { -- Autoformat
         }),
         formatters_by_ft = {
             require("configs.langs.c").format,
-            cpp = { "clang-format" },
+			require("configs.langs.rust").format,
         },
     },
 }
