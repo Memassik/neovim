@@ -16,7 +16,7 @@ return {
             sorter = "case_sensitive",
         },
         view = {
-            width = 30,
+            width = 35,
         },
         renderer = {
             highlight_git = true,

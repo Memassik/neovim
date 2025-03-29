@@ -5,7 +5,7 @@ M.diagnostic_config = function()
 
     vim.diagnostic.config {
         virtual_text = { prefix = "" },
-        signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+        signs = { text = { [x.ERROR] = "E", [x.WARN] = "W", [x.INFO] = "I", [x.HINT] = "H" } },
         underline = true,
         float = { border = "single" },
     }
