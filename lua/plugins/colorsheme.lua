@@ -39,7 +39,7 @@
 -- }
 
 return {
-	"blazkowolf/gruber-darker.nvim",
+	"Memassik/gruber-darker.nvim",
 	priority = 1000,
 	config = function()
 		require("gruber-darker").setup({
