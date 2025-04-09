@@ -7,11 +7,11 @@ return {
                                                   
                                                   
                                                   
-███    ██ ███████  ██████  ██    ██ ██ ███    ███ 
-████   ██ ██      ██    ██ ██    ██ ██ ████  ████ 
-██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██ 
-██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██ 
-██   ████ ███████  ██████    ████   ██ ██      ██ 
+ ███    ██ ███████  ██████  ██    ██ ██ ███    ███ 
+ ████   ██ ██      ██    ██ ██    ██ ██ ████  ████ 
+ ██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██ 
+ ██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██ 
+ ██   ████ ███████  ██████    ████   ██ ██      ██ 
                                                   
                                                   
 		]]
@@ -30,7 +30,6 @@ return {
 					{ action = 'FzfLua files', desc = " Find File", icon = " ", key = "f" },
 					{ action = "ene | startinsert", desc = " New File", icon = " ", key = "n" },
 					{ action = 'FzfLua oldfiles', desc = " Recent Files", icon = " ", key = "r" },
-					{ action = "LazyExtras", desc = " Lazy Extras", icon = " ", key = "x" },
 					{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
 					{ action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit", icon = " ", key = "q" },
 				},
