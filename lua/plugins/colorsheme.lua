@@ -38,30 +38,6 @@ return {
 -- 	end,
 -- }
 
--- return {
--- 	"Memassik/gruber-darker.nvim",
--- 	priority = 1000,
--- 	config = function()
--- 		require("gruber-darker").setup({
--- 			bold = true,
--- 			invert = {
--- 				signs = false,
--- 				tabline = false,
--- 				visual = false,
--- 			},
--- 			italic = {
--- 				strings = true,
--- 				comments = true,
--- 				operators = false,
--- 				folds = true,
--- 			},
--- 			undercurl = true,
--- 			underline = true,
--- 		})
--- 		vim.cmd.colorscheme "gruber-darker"
--- 	end,
--- }
-
 
 -- return {
 -- 	"catppuccin/nvim",
@@ -118,4 +94,19 @@ return {
 -- 		})
 -- 		vim.cmd.colorscheme "catppuccin"
 -- 	end,
+-- }
+
+-- return {
+--     "zenbones-theme/zenbones.nvim",
+--     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+--     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+--     -- In Vim, compat mode is turned on as Lush only works in Neovim.
+--     dependencies = "rktjmp/lush.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     -- you can set set configuration options here
+--     config = function()
+--         -- vim.g.zenbones_darken_comments = 45
+--         vim.cmd.colorscheme('zenbones')
+--     end
 -- }
