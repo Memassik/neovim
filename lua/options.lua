@@ -67,7 +67,7 @@ opt.relativenumber = true  -- Relative line numbers
 opt.scrolloff = 10         -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true      -- Round indent
-opt.shortmess:append({ W = true, I = true, c = true, C = true })
+-- opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.sidescrolloff = 8      -- Columns of context
 opt.spelllang = { "en" }
 opt.splitkeep = "screen"
