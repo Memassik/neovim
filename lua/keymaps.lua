@@ -136,8 +136,6 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 map("n", "<leader>uw", "<cmd>:set wrap!<cr>", { desc = "Wrap" })
 map("n", "<leader>ud", function() vim.diagnostic.enable(false) end, { desc = "Disable Diagnostics" })
 map("n", "<leader>uD", function() vim.diagnostic.enable() end, { desc = "Enable Diagnostics" })
-map("n", "<leader>uT", "<cmd>TSToggle indent<cr><cmd>TSToggle highlight<cr><cmd>TSToggle incremental_selection<cr>",
-    { desc = "Tree-sitter" })
 
 --git
 map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Git Blame Line" })
