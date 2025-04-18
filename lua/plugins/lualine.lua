@@ -32,7 +32,8 @@ return {
 			lualine_c = { "location", "progress", },
 			lualine_x = { "lsp_status", {
 				"diagnostics",
-				symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+				symbols = { error = '', warn = '', info = '', hint = '' },
+				sections = {'error', 'warn', 'info'},
 				colored = true,
 				always_visible = true,
 			}, },
