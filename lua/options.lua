@@ -33,10 +33,6 @@ o.undofile = true
 opt.whichwrap:append("<>[]hl")
 g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
--- Set LSP servers to be ignored when used with `util.root.detectors.lsp`
--- for detecting the LSP root
-g.root_lsp_ignore = { "copilot" }
-
 -- Hide deprecation warnings
 g.deprecation_warnings = false
 
@@ -72,6 +68,7 @@ opt.sidescrolloff = 8      -- Columns of context
 opt.spelllang = { "en" }
 opt.splitkeep = "screen"
 opt.termguicolors = true           -- True color support
+opt.guicursor = ""
 opt.undolevels = 10000
 opt.updatetime = 200               -- Save swap file and trigger CursorHold
 opt.virtualedit = "block"          -- Allow cursor to move where there is no text in visual block mode
