@@ -6,11 +6,16 @@ return {
 			dependencies = { "nvim-neotest/nvim-nio" },
 			-- stylua: ignore
 			keys = {
-				{ "<leader>du", function() require("dapui").toggle({}) end,                     desc = "Dap UI" },
-				{ "<leader>de", function()
-					require("dapui").eval()
-					require("dapui").eval()
-				end,                                                                            desc = "Eval",  mode = { "n", "v" } },
+				{ "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
+				{
+					"<leader>de",
+					function()
+						require("dapui").eval()
+						require("dapui").eval()
+					end,
+					desc = "Eval",
+					mode = { "n", "v" }
+				},
 			},
 			opts = {},
 			config = function(_, opts)
@@ -65,5 +70,8 @@ return {
 		vscode.json_decode = function(str)
 			return vim.json.decode(json.json_strip_comments(str))
 		end
+
+		require("dap").adapters = require("configs.daps").get_adapters()
+		require("dap").configurations = require("configs.daps").get_configurations()
 	end,
 }
