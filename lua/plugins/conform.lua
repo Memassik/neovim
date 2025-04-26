@@ -39,6 +39,11 @@ return { -- Autoformat
 		end, {
 			desc = "Re-enable autoformat-on-save",
 		}),
-		formatters_by_ft = require("configs.format").get_formats(),
+		formatters_by_ft = vim.tbl_deep_extend(
+			"force",
+			{},
+			{ lua = { "stylua" } },
+			require("configs.format").get_formats()
+		),
 	},
 }

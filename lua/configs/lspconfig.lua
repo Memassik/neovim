@@ -48,20 +48,20 @@ M.capabilities.textDocument.completion.completionItem = {
 M.defaults = function()
 	local x = vim.diagnostic.severity
 
-	vim.diagnostic.config {
+	vim.diagnostic.config({
 		virtual_text = { prefix = "" },
 		signs = { text = { [x.ERROR] = "E", [x.WARN] = "W", [x.INFO] = "I", [x.HINT] = "H" } },
 		underline = true,
 		float = { border = "single" },
-	}
+	})
 
 	local lua_lsp_settings = {
 		Lua = {
 			workspace = {
 				library = {
-					vim.fn.expand "$VIMRUNTIME/lua",
-					vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types",
-					vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy",
+					vim.fn.expand("$VIMRUNTIME/lua"),
+					vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types",
+					vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
 					"${3rd}/luv/library",
 				},
 			},
@@ -69,7 +69,7 @@ M.defaults = function()
 	}
 	vim.lsp.config("*", { capabilities = M.capabilities, on_init = M.on_init, on_attach = M.on_attach })
 	vim.lsp.config("lua_ls", { settings = lua_lsp_settings })
-	vim.lsp.enable "lua_ls"
+	vim.lsp.enable("lua_ls")
 end
 
 return M
