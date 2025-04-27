@@ -21,6 +21,9 @@ return {
 		"mikavilpas/blink-ripgrep.nvim",
 	},
 	opts = {
+		cmdline = {
+			enabled = false,
+		},
 		keymap = {
 			-- All presets have the following mappings:
 			-- <tab>/<s-tab>: move to right/left of your snippet expansion
@@ -36,7 +39,19 @@ return {
 		},
 
 		completion = {
-			documentation = { auto_show = false, auto_show_delay_ms = 500 },
+			accept = {
+				auto_brackets = { enabled = false },
+			},
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 250,
+			},
+			list = {
+				selection = {
+					preselect = false,
+					auto_insert = true,
+				},
+			},
 		},
 
 		sources = {
@@ -80,7 +95,7 @@ return {
 						future_features = {
 							issue185_workaround = true,
 							backend = {
-								use = "ripgrep",
+								use = "gitgrep-or-ripgrep",
 							},
 						},
 						debug = false,
