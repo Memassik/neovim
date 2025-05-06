@@ -22,7 +22,7 @@ M.format = {
 }
 
 M.dap = function()
-	return {
+	local ret = {
 		adapters = {
 			gdb = {
 				type = "executable",
@@ -77,8 +77,13 @@ M.dap = function()
 					processId = require("dap.utils").pick_process,
 				},
 			},
+			cpp = {},
+			rust = {},
 		},
 	}
+	ret.configurations.cpp = ret.configurations.c
+	ret.configurations.rust = ret.configurations.c
+	return ret
 end
 
 return M
