@@ -172,8 +172,10 @@ M.config = function()
 	require("mason-lspconfig").setup({
 		ensure_installed = M.ensure_installed,
 		automatic_installation = true,
+		handlers = {
+			M.setup,
+		},
 	})
-	require("mason-lspconfig").setup_handlers({ M.setup })
 end
 
 return M
