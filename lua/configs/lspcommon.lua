@@ -19,7 +19,7 @@ M.servers = {
 	},
 }
 
-M.servers = vim.tbl_deep_extend("force", {}, M.servers, require("configs.lsplangs").get_langs())
+M.servers = vim.tbl_deep_extend("force", {}, M.servers, require("configs.lang-config").get_langs())
 
 M.global_capabilities = {}
 

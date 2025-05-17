@@ -1,25 +1,33 @@
 local M = {}
 
-M.lang = {
-	clangd = {
-		autostart = false,
-		mason = false,
-		cmd = {
-			"clangd",
-			"--background-index",
-			"--clang-tidy",
-			"--header-insertion=never",
-			"--completion-style=detailed",
-			"--function-arg-placeholders",
-			"--fallback-style=llvm",
-		},
-	},
-}
+M.lang = function()
+	local ret = {
+		clangd = {
+			autostart = false,
+			mason = false,
+			cmd = {
+				"clangd",
+				"--background-index",
+				"--clang-tidy",
+				"--header-insertion=never",
+				"--completion-style=detailed",
+				"--function-arg-placeholders",
+				"--fallback-style=llvm",
+			},
+		}
+	}
+	return ret
+end
 
-M.format = {
-	c = { "clang-format" },
-	cpp = { "clang-format" },
-}
+
+M.format = function()
+	local ret = {
+		c = { "clang-format" },
+		cpp = { "clang-format" },
+	}
+	return ret
+end
+
 
 M.dap = function()
 	local ret = {

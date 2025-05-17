@@ -70,7 +70,7 @@ return {
 			return vim.json.decode(json.json_strip_comments(str))
 		end
 
-		require("dap").adapters = require("configs.daps").get_adapters()
-		require("dap").configurations = require("configs.daps").get_configurations()
+		require("dap").adapters = require("configs.lang-config").get_adapters()
+		require("dap").configurations = require("configs.lang-config").get_configurations()
 	end,
 }

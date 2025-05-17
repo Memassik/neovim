@@ -43,7 +43,7 @@ return { -- Autoformat
 			"force",
 			{},
 			{ lua = { "stylua" } },
-			require("configs.format").get_formats()
+			require("configs.lang-config").get_formats()
 		),
 	},
 }
