@@ -86,11 +86,9 @@ M.dap = function()
 				},
 			},
 			cpp = {},
-			rust = {},
 		},
 	}
 	ret.configurations.cpp = ret.configurations.c
-	ret.configurations.rust = ret.configurations.c
 	return ret
 end
 
