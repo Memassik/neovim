@@ -14,6 +14,27 @@ M.lang = function()
 				"--function-arg-placeholders",
 				"--fallback-style=llvm",
 			},
+			filetypes = {
+				"c", "cpp", "objc", "objcpp", "cuda", "proto"
+			},
+			root_markers = {
+				".clangd",
+				".clang-tidy",
+				".clang-format",
+				"compile_commands.json",
+				"compile_flags.txt",
+				"configure.ac",
+				".git"
+			},
+			on_attach = function()
+				vim.api.nvim_buf_create_user_command(0, 'LspClangdSwitchSourceHeader', function()
+					switch_source_header(0)
+				end, { desc = 'Switch between source/header' })
+
+				vim.api.nvim_buf_create_user_command(0, 'LspClangdShowSymbolInfo', function()
+					symbol_info()
+				end, { desc = 'Show symbol info' })
+			end
 		}
 	}
 	return ret
