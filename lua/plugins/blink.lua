@@ -77,11 +77,6 @@ return {
 		snippets = { preset = "luasnip" },
 		fuzzy = {
 			implementation = "prefer_rust_with_warning",
-			sorts = {
-				"exact",
-				"score",
-				"sort_text",
-			},
 		},
 		signature = { enabled = true },
 	},
