@@ -11,6 +11,7 @@ return {
 				mode = { "n", "v" },
 				{ "<leader><tab>", group = "tabs" },
 				{ "<leader>c", group = "code" },
+				{ "<leader>cm", group = "CMake" },
 				{ "<leader>d", group = "debug" },
 				{ "<leader>dp", group = "profiler" },
 				{ "<leader>f", group = "file/find" },
