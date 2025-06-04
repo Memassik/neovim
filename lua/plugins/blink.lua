@@ -2,7 +2,6 @@ return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
 	version = "1.*",
-	-- build = "cargo build --release",
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
@@ -39,10 +38,15 @@ return {
 
 		completion = {
 			accept = {
-				auto_brackets = { enabled = false },
+				auto_brackets = { enabled = true },
+			},
+			menu = {
+				draw = {
+					treesitter = { "lsp" },
+				},
 			},
 			documentation = {
-				auto_show = false,
+				auto_show = true,
 				auto_show_delay_ms = 250,
 			},
 			list = {
@@ -52,17 +56,20 @@ return {
 				},
 			},
 		},
+		signature = {
+			enabled = true,
+		},
+
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 			providers = {
 				buffer = {
 					opts = {
-						get_bufnrs = function()
-							return vim.tbl_filter(function(bufnr)
-								return vim.bo[bufnr].buftype == ""
-							end, vim.api.nvim_list_bufs())
-						end,
+						get_bufnrs = vim.api.nvim_list_bufs
 					},
 				},
 				path = {
@@ -72,13 +79,17 @@ return {
 						end,
 					},
 				},
+				snippets = {
+					should_show_items = function(ctx)
+						return ctx.trigger.initial_kind ~= 'trigger_character'
+					end
+				},
+				lsp = {
+					fallbacks = { "buffer" },
+				},
 			},
 		},
 		snippets = { preset = "luasnip" },
-		fuzzy = {
-			implementation = "prefer_rust_with_warning",
-		},
-		signature = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
 }
