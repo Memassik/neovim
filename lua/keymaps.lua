@@ -115,7 +115,7 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
 
 -- formatting
 map({ "n", "v" }, "<leader>cf", function()
-	require("conform").format({ lsp_fallback = true })
+	require("conform").format({ async = true, lsp_fallback = true })
 end, { desc = "Format" })
 
 -- diagnostic
