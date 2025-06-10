@@ -13,6 +13,8 @@ return {
 	},
 	opts = {
 		disable_context_highlighting = true,
+		disable_insert_on_commit = true,
+		process_spinner = true,
 	},
 	keys = {
 		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
