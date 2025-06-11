@@ -31,12 +31,10 @@ end
 
 M.get_configurations = function()
 	for _, v in ipairs(M.get_langs_lists()) do
-		M.configurations =
-			vim.tbl_deep_extend("force", {}, M.configurations, require(v).dap().configurations)
+		M.configurations = vim.tbl_deep_extend("force", {}, M.configurations, require(v).dap().configurations)
 	end
 	return M.configurations
 end
-
 
 M.get_langs = function()
 	for _, v in ipairs(M.get_langs_lists()) do

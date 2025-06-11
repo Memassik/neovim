@@ -69,7 +69,7 @@ return {
 			providers = {
 				buffer = {
 					opts = {
-						get_bufnrs = vim.api.nvim_list_bufs
+						get_bufnrs = vim.api.nvim_list_bufs,
 					},
 				},
 				path = {
@@ -81,8 +81,8 @@ return {
 				},
 				snippets = {
 					should_show_items = function(ctx)
-						return ctx.trigger.initial_kind ~= 'trigger_character'
-					end
+						return ctx.trigger.initial_kind ~= "trigger_character"
+					end,
 				},
 				lsp = {
 					fallbacks = { "buffer" },

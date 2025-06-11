@@ -15,7 +15,12 @@ M.lang = function()
 				"--fallback-style=llvm",
 			},
 			filetypes = {
-				"c", "cpp", "objc", "objcpp", "cuda", "proto"
+				"c",
+				"cpp",
+				"objc",
+				"objcpp",
+				"cuda",
+				"proto",
 			},
 			root_markers = {
 				".clangd",
@@ -24,22 +29,21 @@ M.lang = function()
 				"compile_commands.json",
 				"compile_flags.txt",
 				"configure.ac",
-				".git"
+				".git",
 			},
 			on_attach = function()
-				vim.api.nvim_buf_create_user_command(0, 'LspClangdSwitchSourceHeader', function()
+				vim.api.nvim_buf_create_user_command(0, "LspClangdSwitchSourceHeader", function()
 					switch_source_header(0)
-				end, { desc = 'Switch between source/header' })
+				end, { desc = "Switch between source/header" })
 
-				vim.api.nvim_buf_create_user_command(0, 'LspClangdShowSymbolInfo', function()
+				vim.api.nvim_buf_create_user_command(0, "LspClangdShowSymbolInfo", function()
 					symbol_info()
-				end, { desc = 'Show symbol info' })
-			end
-		}
+				end, { desc = "Show symbol info" })
+			end,
+		},
 	}
 	return ret
 end
-
 
 M.format = function()
 	local ret = {
@@ -48,7 +52,6 @@ M.format = function()
 	}
 	return ret
 end
-
 
 M.dap = function()
 	local ret = {

@@ -5,11 +5,10 @@ M.lang = function()
 		rust_analyzer = {
 			autostart = false,
 			mason = false,
-		}
+		},
 	}
 	return ret
 end
-
 
 M.format = function()
 	local ret = {
@@ -17,7 +16,6 @@ M.format = function()
 	}
 	return ret
 end
-
 
 M.dap = function()
 	local ret = {
@@ -75,7 +73,7 @@ M.dap = function()
 					processId = require("dap.utils").pick_process,
 				},
 			},
-		}
+		},
 	}
 	return ret
 end
