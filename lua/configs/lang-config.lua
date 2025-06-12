@@ -29,18 +29,4 @@ M.get_adapters = function()
 	return M.adapters
 end
 
-M.get_configurations = function()
-	for _, v in ipairs(M.get_langs_lists()) do
-		M.configurations = vim.tbl_deep_extend("force", {}, M.configurations, require(v).dap().configurations)
-	end
-	return M.configurations
-end
-
-M.get_langs = function()
-	for _, v in ipairs(M.get_langs_lists()) do
-		M.langs = vim.tbl_deep_extend("force", {}, M.langs, require(v).lang())
-	end
-	return M.langs
-end
-
 return M

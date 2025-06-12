@@ -1,15 +1,5 @@
 local M = {}
 
-M.lang = function()
-	local ret = {
-		rust_analyzer = {
-			autostart = false,
-			mason = false,
-		},
-	}
-	return ret
-end
-
 M.format = function()
 	local ret = {
 		rust = { "rustfmt" },
