@@ -1,5 +1,19 @@
 local M = {}
 
+M.lsp = function()
+	vim.lsp.config["clangd"] = {
+		cmd = {
+			"clangd",
+			"--background-index",
+			"--clang-tidy",
+			"--header-insertion=never",
+			"--completion-style=detailed",
+			"--function-arg-placeholders",
+			"--fallback-style=llvm",
+		},
+	}
+end
+
 M.format = function()
 	local ret = {
 		c = { "clang-format" },

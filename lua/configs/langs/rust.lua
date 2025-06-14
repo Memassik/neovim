@@ -1,5 +1,7 @@
 local M = {}
 
+M.lsp = function() end
+
 M.format = function()
 	local ret = {
 		rust = { "rustfmt" },

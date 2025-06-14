@@ -29,4 +29,10 @@ M.get_adapters = function()
 	return M.adapters
 end
 
+M.language_setup = function()
+	for _, v in ipairs(M.get_langs_lists()) do
+		require(v).lsp()
+	end
+end
+
 return M
