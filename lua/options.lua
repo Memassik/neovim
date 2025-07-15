@@ -65,7 +65,7 @@ opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "glob
 opt.shiftround = true -- Round indent
 -- opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.sidescrolloff = 8 -- Columns of context
-opt.spelllang = { "en" }
+opt.spelllang = { "en", "ru" }
 opt.splitkeep = "screen"
 opt.termguicolors = true -- True color support
 opt.guicursor = ""

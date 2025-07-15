@@ -66,28 +66,6 @@ return {
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
-			providers = {
-				buffer = {
-					opts = {
-						get_bufnrs = vim.api.nvim_list_bufs,
-					},
-				},
-				path = {
-					opts = {
-						get_cwd = function(_)
-							return vim.fn.getcwd()
-						end,
-					},
-				},
-				snippets = {
-					should_show_items = function(ctx)
-						return ctx.trigger.initial_kind ~= "trigger_character"
-					end,
-				},
-				lsp = {
-					fallbacks = { "buffer" },
-				},
-			},
 		},
 		snippets = { preset = "luasnip" },
 	},
