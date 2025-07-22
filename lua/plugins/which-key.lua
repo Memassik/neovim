@@ -11,6 +11,7 @@ return {
 				mode = { "n", "v" },
 				{ "<leader><tab>", group = "tabs" },
 				{ "<leader>c", group = "code" },
+				{ "<leader>j", group = "Leap", icon = { icon = " ", color = "blue" } },
 				{ "<leader>cm", group = "CMake" },
 				{ "<leader>d", group = "debug" },
 				{ "<leader>dp", group = "profiler" },
