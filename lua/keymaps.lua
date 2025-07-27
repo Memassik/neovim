@@ -136,6 +136,7 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- toggle options
 map("n", "<leader>uw", "<cmd>:set wrap!<cr>", { desc = "Wrap" })
+map("n", "<leader>us", "<cmd>:set spell!<cr>", { desc = "Spell" })
 map("n", "<leader>ud", function()
 	vim.diagnostic.enable(false)
 end, { desc = "Disable Diagnostics" })
