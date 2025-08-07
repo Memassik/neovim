@@ -46,7 +46,7 @@ return {
 					[vim.diagnostic.severity.HINT] = "H ",
 				},
 			} or {},
-			virtual_text = {
+			virtual_text = false and {
 				source = "if_many",
 				spacing = 2,
 				format = function(diagnostic)

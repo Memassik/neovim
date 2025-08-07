@@ -143,6 +143,17 @@ end, { desc = "Disable Diagnostics" })
 map("n", "<leader>uD", function()
 	vim.diagnostic.enable()
 end, { desc = "Enable Diagnostics" })
+-- toggle virtual text diagnostic
+map("n", "<leader>uv", function()
+	vim.diagnostic.config({
+		virtual_text = false,
+	})
+end, { desc = "Disable Diagnostics" })
+map("n", "<leader>uV", function()
+	vim.diagnostic.config({
+		virtual_text = true,
+	})
+end, { desc = "Enable Diagnostics" })
 
 --git
 map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Git Blame Line" })

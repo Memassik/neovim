@@ -9,8 +9,13 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
-		{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+		{
+			"<leader>xx",
+			"<cmd>lua vim.diagnostic.open_float(nil, { focus = false })<cr>",
+			desc = "Diagnostics Float Window",
+		},
+		{ "<leader>xa", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+		{ "<leader>xA", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
 		{ "<leader>cs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
 		{
 			"<leader>cS",

@@ -4,12 +4,12 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>uh",
+			"<leader>uH",
 			"<cmd>HighlightColors On<cr>",
 			desc = "Highlights On",
 		},
 		{
-			"<leader>uH",
+			"<leader>uh",
 			"<cmd>HighlightColors Off<cr>",
 			desc = "Highlights Off",
 		},
