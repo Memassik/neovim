@@ -85,7 +85,12 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
+-- USER DEFINED VARIABLES
 g.disable_autoformat = true
+g.diagnostic_float = false
+g.enable_diagnostic_at_start = true
+g.enable_virtual_text_at_start = false
+---------------------------
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has("win32") ~= 0

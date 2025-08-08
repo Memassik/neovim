@@ -138,22 +138,25 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 map("n", "<leader>uw", "<cmd>:set wrap!<cr>", { desc = "Wrap" })
 map("n", "<leader>us", "<cmd>:set spell!<cr>", { desc = "Spell" })
 map("n", "<leader>ud", function()
-	vim.diagnostic.enable(false)
-end, { desc = "Disable Diagnostics" })
-map("n", "<leader>uD", function()
-	vim.diagnostic.enable()
-end, { desc = "Enable Diagnostics" })
+	vim.g.enable_diagnostic_at_start = not vim.g.enable_diagnostic_at_start
+	local enabled = vim.g.enable_diagnostic_at_start
+	if enabled then
+		vim.diagnostic.enable()
+	else
+		vim.diagnostic.enable(false)
+	end
+end, { desc = "Toggle Diagnostics" })
 -- toggle virtual text diagnostic
 map("n", "<leader>uv", function()
+	vim.g.enable_virtual_text_at_start = not vim.g.enable_virtual_text_at_start
+	local enabled = vim.g.enable_virtual_text_at_start
 	vim.diagnostic.config({
-		virtual_text = false,
+		virtual_text = enabled,
 	})
-end, { desc = "Disable Diagnostics" })
-map("n", "<leader>uV", function()
-	vim.diagnostic.config({
-		virtual_text = true,
-	})
-end, { desc = "Enable Diagnostics" })
+end, { desc = "Toggle Virtual Text" })
+map("n", "<leader>uf", function()
+	vim.g.diagnostic_float = not vim.g.diagnostic_float
+end, { desc = "Toggle Diagnostics Float Window" })
 
 --git
 map("n", "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Git Blame Line" })

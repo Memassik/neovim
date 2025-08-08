@@ -69,3 +69,14 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+	group = augroup("diagnostic_float"),
+	callback = function()
+		if vim.g.diagnostic_float then
+			vim.diagnostic.open_float(nil, { focus = false })
+		else
+			return
+		end
+	end,
+})
