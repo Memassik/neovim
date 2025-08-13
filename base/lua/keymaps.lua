@@ -161,6 +161,11 @@ end, { desc = "Inspect Tree" })
 
 map("t", "<C-e>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 
+-- floating terminal
+map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", { desc = "Terminal (cwd)" })
+map("n", "<leader>fT", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal floating" })
+map("t", "<C-e>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
+
 -- Terminal Mappings
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
@@ -178,3 +183,6 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- lazy
+map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
