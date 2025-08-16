@@ -82,6 +82,7 @@ g.markdown_recommended_style = 0
 -- disable some default providers
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
+g.loaded_node_provider = 0
 
 -- USER DEFINED VARIABLES
 g.disable_autoformat = true
