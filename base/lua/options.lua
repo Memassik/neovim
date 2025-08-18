@@ -68,7 +68,6 @@ opt.sidescrolloff = 8 -- Columns of context
 opt.spelllang = { "en", "ru" }
 opt.splitkeep = "screen"
 opt.termguicolors = true -- True color support
-opt.guicursor = ""
 opt.undolevels = 10000
 opt.updatetime = 350 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
