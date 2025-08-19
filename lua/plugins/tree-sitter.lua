@@ -22,9 +22,9 @@ return {
 			disable = function(lang, bufnr)
 				return vim.api.nvim_buf_line_count(bufnr) > 10000
 			end,
-			use_languagetree = true,
+			additional_vim_regex_highlighting = false,
 		},
-		indent = { enable = true },
+		indent = { enable = false },
 		incremental_selection = {
 			enable = true,
 			keymaps = {
