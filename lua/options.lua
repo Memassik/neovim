@@ -10,12 +10,15 @@ o.laststatus = 3
 o.showmode = false
 o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 o.cursorline = true
+
 -- Indenting
--- o.expandtab = true
-o.shiftwidth = 4
-o.smartindent = true
 o.tabstop = 4
-o.softtabstop = 4
+o.shiftwidth = 4
+o.softtabstop = -1
+o.smartindent = true
+o.expandtab = true
+o.autoindent = true
+
 o.ignorecase = true
 o.smartcase = true
 o.mouse = ""
