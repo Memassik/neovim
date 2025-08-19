@@ -18,7 +18,7 @@ o.tabstop = 4
 o.softtabstop = 4
 o.ignorecase = true
 o.smartcase = true
-o.mouse = "a"
+o.mouse = ""
 -- Numbers
 o.number = true
 o.numberwidth = 2
