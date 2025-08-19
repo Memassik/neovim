@@ -16,8 +16,12 @@ return {
 			"markdown_inline",
 		},
 		highlight = {
-			enable = true,
+			enable = function()
+				vim.cmd("PolyglotDisable")
+				return true
+			end,
 			disable = function(lang, bufnr)
+				vim.cmd("PolyglotEnable")
 				return vim.api.nvim_buf_line_count(bufnr) > 10000
 			end,
 			use_languagetree = true,
