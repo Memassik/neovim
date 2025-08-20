@@ -81,6 +81,10 @@ return {
 				preview = {
 					scrollchars = { "┃", "" },
 				},
+
+				on_create = function(_)
+					vim.cmd("set winhl=Normal:Normal,FloatBorder:Normal")
+				end,
 			},
 			files = {
 				cwd_prompt = false,
