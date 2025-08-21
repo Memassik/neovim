@@ -27,6 +27,6 @@ return {
 		vim.api.nvim_create_user_command("PolyglotEnable", PolyglotEnable, {})
 		vim.api.nvim_create_user_command("PolyglotDisable", PolyglotDisable, {})
 
-		vim.cmd("PolyglotDisable")
+		vim.cmd("PolyglotEnable")
 	end,
 }
