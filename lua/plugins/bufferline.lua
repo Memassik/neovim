@@ -9,4 +9,7 @@ return {
 			},
 		},
 	},
+    keys = {
+		{ "gb", "<cmd>BufferLinePick<CR>", desc = "Bufferline Pick" },
+    }
 }
