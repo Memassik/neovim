@@ -8,8 +8,8 @@ return {
 	},
 	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 	keys = {
-		vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeToggle <CR>"),
-		vim.keymap.set("n", "<leader>E", "<cmd> NvimTreeFocus <CR>"),
+		vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFindFileToggle <CR>"),
+		vim.keymap.set("n", "<leader>E", "<cmd> NvimTreeFindFile <CR>"),
 	},
 	opts = {
 		sort = {
