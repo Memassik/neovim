@@ -174,7 +174,7 @@ end, { desc = "Inspect Tree" })
 
 -- floating terminal
 map("n", "<leader>ft", "<cmd>ToggleTerm<cr>", { desc = "Terminal (cwd)" })
-map("n", "<leader>fT", "<cmd>ToggleTerm direction=float<cr>", { desc = "Terminal floating" })
+map("n", "<leader>fT", "<cmd>ToggleTerm direction=tab<cr>", { desc = "Terminal Tab" })
 map("t", "<C-e>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 
 -- Terminal Mappings

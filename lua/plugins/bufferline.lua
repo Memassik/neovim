@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	event = "BufReadPre",
+    event = "VimEnter",
 	opts = {
 		options = {
 			themable = true,
