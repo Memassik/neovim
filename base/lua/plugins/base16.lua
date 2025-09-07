@@ -3,6 +3,6 @@ return {
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme base16-da-one-black")
+		vim.cmd("colorscheme base16-gruber")
 	end,
 }
