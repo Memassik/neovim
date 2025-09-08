@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"folke/todo-comments.nvim",
+		"nvim-lua/plenary.nvim",
 	},
 	cmd = "FzfLua",
 	opts = function(_, opts)
