@@ -6,7 +6,12 @@ return {
 			opts = {},
 		},
 	},
-	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+	cmd = {
+        "NvimTreeToggle",
+        "NvimTreeFocus",
+        "NvimTreeFindFileToggle",
+        "NvimTreeFindFile",
+    },
 	keys = {
 		vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFindFileToggle <CR>"),
 		vim.keymap.set("n", "<leader>E", "<cmd> NvimTreeFindFile <CR>"),
