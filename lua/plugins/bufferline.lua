@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-    event = "VimEnter",
+	event = "VimEnter",
 	opts = {
 		options = {
 			themable = true,
@@ -9,7 +9,7 @@ return {
 			},
 		},
 	},
-    keys = {
+	keys = {
 		{ "gb", "<cmd>BufferLinePick<CR>", desc = "Bufferline Pick" },
-    }
+	},
 }

@@ -31,7 +31,6 @@ require("lazy").setup({
 	checker = { enabled = true, notify = false },
 
 	performance = {
-		rtp = {
-		},
+		rtp = {},
 	},
 })

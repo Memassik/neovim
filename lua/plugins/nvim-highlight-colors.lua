@@ -1,8 +1,7 @@
 return {
 	"brenoprata10/nvim-highlight-colors",
 	cmd = { "HighlightColors" },
-	opts = {
-	},
+	opts = {},
 	keys = {
 		{
 			"<leader>uh",
