@@ -20,7 +20,7 @@ o.softtabstop = 4
 
 o.ignorecase = true
 o.smartcase = true
-o.mouse = ""
+o.mouse = "ar"
 -- Numbers
 o.number = true
 o.numberwidth = 2

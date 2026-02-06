@@ -5,7 +5,7 @@ M.lsp = function()
 		cmd = {
 			"clangd",
 			"--background-index",
-			"-j=4",
+			"-j=8",
 			"--clang-tidy",
 			"--cross-file-rename",
 			"--header-insertion=never",
