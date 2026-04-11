@@ -1,3 +1,6 @@
+require("nvim-treesitter").install({
+	"c",
+})
 vim.treesitter.start()
 require("conform").formatters_by_ft.c = { "clang-format" }
 vim.lsp.config["clangd"] = {

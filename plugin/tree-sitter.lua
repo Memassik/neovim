@@ -12,8 +12,6 @@ vim.pack.add({
 
 require("nvim-treesitter").install({
 	"bash",
-	"c",
-	"cpp",
 	"diff",
 	"html",
 	"lua",
