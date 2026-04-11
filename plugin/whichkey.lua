@@ -10,16 +10,17 @@ wk.setup({
 })
 
 wk.add({
+	{ "<leader><Tab>", group = "tab" },
+	{ "<leader>b", group = "buffer" },
 	{ "<leader>c", group = "code" },
 	{ "<leader>f", group = "find" },
 	{ "<leader>fg", group = "git" },
 	{ "<leader>g", group = "git" },
+	{ "gr", group = "lsp" },
 	{ "<leader>j", hidden = true },
 	{ "<leader>s", group = "search" },
 	{ "<leader>st", group = "tags" },
-	{ "<leader>b", group = "buffer" },
 	{ "<leader>u", group = "toggle" },
-	{ "<leader>x", group = "diagnostic" },
 	{ "<leader>w", group = "window" },
-	{ "<leader><Tab>", group = "tab" },
+	{ "<leader>x", group = "diagnostic" },
 })

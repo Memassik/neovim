@@ -86,8 +86,6 @@ g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
 
 -- USER DEFINED VARIABLES
-g.disable_autoformat = true
 g.diagnostic_float = false
 g.enable_diagnostic_at_start = true
-g.enable_virtual_text_at_start = false
 ---------------------------
