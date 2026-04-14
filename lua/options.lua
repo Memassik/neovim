@@ -89,3 +89,6 @@ g.loaded_node_provider = 0
 g.diagnostic_float = false
 g.enable_diagnostic_at_start = true
 ---------------------------
+
+opt.langmap =
+	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
