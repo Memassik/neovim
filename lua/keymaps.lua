@@ -1,6 +1,9 @@
 local map = vim.keymap.set
 
 -- clear highlights
+map("n", "<leader>cm", "<cmd>make<CR>", { desc = "make" })
+
+-- clear highlights
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 -- move during insert
