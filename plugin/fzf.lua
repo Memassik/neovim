@@ -3,7 +3,18 @@ vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 })
 
-require("fzf-lua").setup({ "ivy", fzf_colors = true })
+require("fzf-lua").setup({
+	"ivy",
+	fzf_colors = true,
+	previewers = {
+		builtin = {
+			treesitter = {
+				limit_b = 1024 * 1024 * 5,
+				disabled = { "markdown" },
+			},
+		},
+	},
+})
 
 local kmap = vim.keymap
 kmap.set("n", "<leader>,", "<cmd>FzfLua buffers sort_lastused=true<cr>", { desc = "Switch Buffer" })
