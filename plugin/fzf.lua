@@ -6,6 +6,20 @@ vim.pack.add({
 require("fzf-lua").setup({
 	"ivy",
 	fzf_colors = true,
+	keymap = {
+		builtin = {
+			["<c-f>"] = "preview-page-down",
+			["<c-b>"] = "preview-page-up",
+		},
+		fzf = {
+			["ctrl-q"] = "select-all+accept",
+			["ctrl-u"] = "half-page-up",
+			["ctrl-d"] = "half-page-down",
+			["ctrl-x"] = "jump",
+			["ctrl-f"] = "preview-page-down",
+			["ctrl-b"] = "preview-page-up",
+		},
+	},
 	previewers = {
 		builtin = {
 			treesitter = {
@@ -15,6 +29,8 @@ require("fzf-lua").setup({
 		},
 	},
 })
+
+vim.cmd("FzfLua register_ui_select")
 
 local kmap = vim.keymap
 kmap.set("n", "<leader>,", "<cmd>FzfLua buffers sort_lastused=true<cr>", { desc = "Switch Buffer" })
