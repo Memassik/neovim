@@ -46,6 +46,7 @@ kmap.set("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", { desc = "Commits" })
 kmap.set("n", "<leader>g/", "<cmd>FzfLua git_bcommits<CR>", { desc = "Current Buffer Commits" })
 kmap.set("n", "<leader>gs", "<cmd>FzfLua git_status<CR>", { desc = "Status" })
 kmap.set("n", "<leader>gb", "<cmd>FzfLua git_blame<CR>", { desc = "BLAME!" })
+kmap.set("n", "<leader>gh", "<cmd>FzfLua git_hunks<CR>", { desc = "Hunks" })
 
 -- search
 kmap.set("n", "<leader>sd", "<cmd>FzfLua diagnostics_document<cr>", { desc = "Document Diagnostics" })
